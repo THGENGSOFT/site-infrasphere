@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Gestão | InfraSphere</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    
+    <script src="assets/js/auth.js"></script>
+    <script>checkAuth();</script> 
+</head>
+<body>
+
+<div class="navbar" style="justify-content: space-between; background: #111;">
+    <span class="brand">IS.INTERNAL</span>
+    <button onclick="logout()" style="background:transparent; border:1px solid #333; color:#666; padding:5px 10px; cursor:pointer; font-size:0.8rem;">
+        Sair ✕
+    </button>
+</div>
+
+<div class="ambient-light"></div>
+
+<section class="hero" style="padding: 40px 20px 20px;">
+    <span class="badge" style="border-color:red; color:red;">USO CONFIDENCIAL</span>
+    <h1>Gestão de <span class="gradient-text">Propostas</span></h1>
+</section>
+
+<div class="container" id="app"></div>
+
+<div style="height: 150px;"></div>
+
+<div class="total-bar">
+    <div class="total-info">
+        <span class="total-label">Setup</span>
+        <span class="total-value" id="ui-total-setup">R$ 0,00</span>
+        <span class="total-monthly" id="ui-total-monthly" style="display:none; color:var(--accent-gold); font-size:0.8rem;">+ R$ 0,00 /mês</span>
+    </div>
+    <div class="actions">
+        <button class="btn-clean" onclick="resetForm()">🗑️</button>
+        <button class="btn-pdf" onclick="printOrder()">PDF</button>
+        <button class="btn-cta" onclick="generateWhatsApp()">Whats</button>
+    </div>
+</div>
+
+<div id="print-area">
+    <div class="print-header">
+        <div>
+            <div class="print-title">INFRASPHERE SOLUTIONS</div>
+            <div>Thiago Da Costa Fagundes</div>
+            <div>Engenharia de Software</div>
+            <div style="margin-top:5px; font-size:11px; color:#555;">contato@infrasphere.dev | Curitiba - PR</div>
+        </div>
+        <div class="print-meta">
+            <div id="print-date">Data: --/--/----</div>
+            <div>Validade: 7 dias</div>
+        </div>
+    </div>
+    <table class="print-table">
+        <thead>
+            <tr>
+                <th style="width:50%">SERVIÇO</th>
+                <th style="text-align:center">QTD</th>
+                <th style="text-align:right">UNIT.</th>
+                <th style="text-align:right">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody id="print-tbody"></tbody>
+    </table>
+    <div class="print-totals-area">
+        <div class="print-row">
+            <span>INVESTIMENTO ÚNICO (SETUP):</span>
+            <strong id="print-setup-val">R$ 0,00</strong>
+        </div>
+        <div class="print-row monthly" id="print-monthly-row" style="display:none;">
+            <span>RECORRÊNCIA MENSAL:</span>
+            <strong id="print-monthly-val" style="color:#2563eb;">R$ 0,00 /mês</strong>
+        </div>
+    </div>
+    <div class="print-footer-note">
+        <strong>Nota Técnica:</strong> Estimativa baseada em escopo padrão.
+    </div>
+</div>
+
+<script src="assets/js/private-data.js"></script>
+
+</body>
+</html>

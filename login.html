@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Restrito | InfraSphere</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body { display: flex; align-items: center; justify-content: center; height: 100vh; background: #020202; }
+        .login-box { 
+            background: rgba(20, 20, 20, 0.9); border: 1px solid #333; 
+            padding: 40px; border-radius: 12px; text-align: center; width: 100%; max-width: 350px;
+            box-shadow: 0 0 50px rgba(37, 99, 235, 0.1);
+        }
+        .login-input {
+            width: 100%; padding: 12px; margin: 20px 0; background: #000; border: 1px solid #444; 
+            color: white; border-radius: 6px; font-family: 'JetBrains Mono', monospace; text-align: center;
+        }
+        .login-btn {
+            width: 100%; padding: 12px; background: var(--brand-primary); color: white; border: none; 
+            border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .login-btn:hover { background: var(--brand-glow); }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <div style="font-size: 30px; margin-bottom: 10px;">🔒</div>
+        <h2 style="color:white; font-family:'Inter', sans-serif; margin-bottom: 5px;">Área Restrita</h2>
+        <p style="color:#666; font-size: 0.8rem; margin-top: 0;">InfraSphere OS v1.0</p>
+        
+        <input type="password" id="password" class="login-input" placeholder="Chave de Acesso" onkeyup="if(event.keyCode===13) document.getElementById('btnEnter').click()">
+        
+        <button id="btnEnter" class="login-btn" onclick="tryLogin(document.getElementById('password').value)">
+            AUTENTICAR
+        </button>
+    </div>
+
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>
