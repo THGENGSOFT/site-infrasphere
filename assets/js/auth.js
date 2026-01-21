@@ -4,8 +4,8 @@
  */
 
 const CONFIG = {
-    // Hash CORRETO capturado do seu navegador para a senha "admin2026"
-    PASSWORD_HASH: "6051fc84a7a0d74c225fb18a496b09952da5642e60723ecae543298edd7d82d6",
+    // Cole aqui o HASH gerado no console (NÃO cole a senha em texto puro!)
+    PASSWORD_HASH: "09c00cea6ecfdbfe28dffbdaf776ea9e2d52b5838935caab13a0e03b9acb9f24", 
     SESSION_KEY: "infrasphere_auth_token"
 };
 
